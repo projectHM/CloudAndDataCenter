@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 
 class TrackInfo extends Component{
- constructor(){
-     super();
+  constructor(){
+        super();
+    }
 
+  render(){
+      return(
+        <div className="modal">
+          <form className="form"onSubmit>
+            
 
- }
- render(){
-    return(
-      <div className="modal">
-        <form className="form"onSubmit>
+            <label>Information</label><input type="text" value name="Info" onChange/><br/>
+
           
-
-          <label>Information</label><input type="text" value name="Info" onChange/><br/>
-
-        
-          <button onClick={}> Edit </button>
-          <button onClick={}> Delete </button>
-        </form>
-      </div>
-    )
-  }
+            <button> Edit </button>
+            <button> Delete </button>
+          </form>
+        </div>
+      )
+    }
 
 }
 export default TrackInfo;
