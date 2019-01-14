@@ -27,7 +27,4 @@ product.create = (req, res, next) => {
     })
 }
 
-
-
-
 module.exports = product;

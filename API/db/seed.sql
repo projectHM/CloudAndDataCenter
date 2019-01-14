@@ -16,16 +16,15 @@ CREATE TABLE clients
     id serial primary key,
     name varchar(255),
     email varchar(255),
-    phone varchar(255),
-    location varchar(255)
+    phone varchar(255)  
 );
 CREATE TABLE request
 (
     id serial primary key,
     date VARCHAR(255),
+    location varchar(255),
     client_id int not null,
-    FOREIGN Key (
-        client_id) REFERENCES clients
+    FOREIGN Key (client_id) REFERENCES clients
 );
 CREATE TABLE reqProduct
 (
@@ -33,7 +32,8 @@ CREATE TABLE reqProduct
     product_id int not null,
     FOREIGN KEY (product_id) REFERENCES products,
     request_Id int not null,
-    FOREIGN Key (request_Id) REFERENCES request
+    FOREIGN Key (request_Id) REFERENCES request,
+    price int
 );
 
 
@@ -46,6 +46,13 @@ VALUES
     ('WD','disk','1TB',49.99),
     ('Cisco','switch','none',34.9),
     ('Cisco','router','none',89.99);
+
+    INSERT INTO clients
+    (name, email, phone )
+VALUES
+('Hanan', 'hanan111@hotmail.com', '0553299864');
+   
+
 
 
 

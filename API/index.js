@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
 })
 
 const productsController = require('./controllers/productsController');
-app.use('/products', productsController);
+app.use('/request', productsController);
+
+
 
 app.listen(port, () => {
     console.log('---------------------------------------');
