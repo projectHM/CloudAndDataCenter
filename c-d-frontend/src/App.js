@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Track from './components/Track';
+import TrackInfo from './components/TrackInfo';
+
 import './App.css';
 
 class App extends Component {
