@@ -21,7 +21,8 @@ CREATE TABLE request
     id serial primary key,
     date VARCHAR(255),
     client_id int not null,
-    FOREIGN Key (client_id) REFERENCES clients
+    FOREIGN Key (
+        client_id) REFERENCES clients
 );
 CREATE TABLE reqProduct
 (
