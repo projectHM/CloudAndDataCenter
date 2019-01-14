@@ -54,4 +54,4 @@ product.delete = (req, res, next) => {
 
 
 
-module.exports = products;
+module.exports = product;
