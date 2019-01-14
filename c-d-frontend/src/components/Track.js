@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 
 class Track extends Component{
- constructor(){
-     super();
-     
+    constructor(){
+        super();
+        this.state = {
 
+        }
+    }
 
- }
-
-
- render() {
-   
-  }
-
+    render() {
+    return(
+        <div>
+            <p>Track</p>
+        </div>
+    ) 
+    }
 
 }
 export default Track;
