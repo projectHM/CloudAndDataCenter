@@ -3,7 +3,7 @@ const router = express.Router();
 
 const product = require('../models/product');
 
-const sendProducts = (req, res) => res.json(res.locals.products);
+const sendProducts = (req, res) => res.json({products : res.locals.products, clinets: res.locals.clients ,  request: res.locals.request});
 const sendProduct = (req, res) => res.json(res.locals.product);
 const sendSuccess = (req, res) => res.json({ message: 'success' });
 

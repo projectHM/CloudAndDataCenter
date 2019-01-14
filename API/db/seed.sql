@@ -1,4 +1,7 @@
+DROP DATABASE IF EXISTS cloud;
 CREATE DATABASE cloud;
+\c cloud
+
 
 CREATE TABLE products
 (
@@ -35,7 +38,7 @@ CREATE TABLE reqProduct
 
 
 INSERT INTO products
-    (id,name, type,unit,cost)
+    (name, type,unit,cost)
 VALUES
     ('CPU','i5','none',173),
     ('CPU','i7','none',424),
