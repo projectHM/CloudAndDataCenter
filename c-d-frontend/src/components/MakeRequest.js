@@ -52,7 +52,7 @@ class MakeRequest extends Component {
 
     render(){
         return(
-            <div>
+            <div className="modal">
                 <h1>Make request</h1>
                 <form onSubmit={this.handelSubmit.bind(this)}>
                     <label>Name: </label><input type="text" name="name" onChange={this.handelChange.bind(this)}/><br/>
