@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Map from './Map'
 
 class MakeRequest extends Component {
     constructor(){
@@ -23,6 +24,7 @@ class MakeRequest extends Component {
     }
 
     handelSubmit(event){
+        this.props.setActivePage('track');
         event.preventDefault();
         const request = this.state.req;
         const client = {
@@ -42,9 +44,11 @@ class MakeRequest extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+                // this.props.setActivePage('track');
             })
             .catch(error => console.log(error));
     }
+
 
     render(){
         return(
@@ -55,6 +59,20 @@ class MakeRequest extends Component {
                     <label>Email: </label><input type="email" name="email" onChange={this.handelChange.bind(this)}/><br/>
                     <label>Phone: </label><input type="number" name="phone" onChange={this.handelChange.bind(this)}/><br/>
                     <label>Location: </label><input type="text" name="location" onChange={this.handelChange.bind(this)}/><br/>
+                    {/* <Map
+                    id="myMap"
+                    options={{
+                    center: { lat: 41.0082, lng: 28.9784 },
+                    zoom: 8
+                    }}
+                    onMapLoad={map => {
+                    var marker = new window.google.maps.Marker({
+                        position: { lat: 41.0082, lng: 28.9784 },
+                        map: map,
+                        title: 'Hello Istanbul!'
+                    });
+                    }}
+                    /> */}
                     <button>Submit</button>
                 </form>
             </div>
