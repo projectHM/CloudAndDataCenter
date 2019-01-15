@@ -22,8 +22,8 @@ class Main extends Component {
         return (
             <div>
                 <h1>Main</h1>
-                <button>Show</button>
-                {this.renderCostCalcuate()}
+                <button onClick={()=>this.props.setActivePage('costCalculate')}>Show</button>
+                {/* {this.renderCostCalcuate()} */}
                 {/* <CostCalcuate/> */}
             </div>
         )

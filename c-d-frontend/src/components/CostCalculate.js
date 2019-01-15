@@ -7,19 +7,54 @@ class CostCalcuate extends Component {
     constructor(){
         super();
         this.state ={
-            
+            cpu: '',
+            ram: '',
+            disk: '',
+            router: '',
+            switch: ''
         }
     }
+
+    setReq(req){
+        this.setState({
+            cpu: req.cpu,
+            ram: req.ram,
+            disk: req.disk,
+            router: req.router,
+            switch: req.switch
+        })
+    }
+
+    handelSubmit(event){
+        // event
+        event.preventDefault();
+        // this.setState({
+        //     cpu: req.cpu,
+        //     ram: req.ram,
+        //     disk: req.disk,
+        //     router: req.router,
+        //     switch: req.switch
+        // })
+    }
+    
 
     render(){
         return(
             <div>
                 <p>cost calculate</p>
-                <DataCenter/>
+                <div>
+
+                <DataCenter setReq={this.setReq.bind(this)} setActivePage={this.props.setActivePage.bind(this)}/>
+                <form onSubmit={this.handelSubmit.bind(this)}>
+                    {/* <button>Make Request</button> */}
+                </form>
+                </div>
+                <div>
                 <Cloud/>
-                
-                <button>Make Req</button>
-                <MakeRequest/>
+                </div>
+
+                {/* <button>Make Req</button> */}
+                {/* <MakeRequest req={this.state}/> */}
             </div>
         )
     }
