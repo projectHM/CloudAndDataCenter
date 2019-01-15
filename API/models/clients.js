@@ -14,8 +14,8 @@ clients.getAll = (req, res, next) => {
 }
 
 clients.create = (req, res, next) => {
-  db.one('INSERT INTO clients (name, email, phone, location) VALUES($1, $2, $3, $4) RETURNING *;',
-    [req.body.name, req.body.email, req.body.phone, req.body.location])
+  db.one('INSERT INTO clients (name, email, phone) VALUES($1, $2, $3) RETURNING *;',
+    [req.body.name, req.body.email, req.body.phone])
     .then((data) => {
       res.locals.clients = data;
       next();
@@ -27,8 +27,8 @@ clients.create = (req, res, next) => {
 }
 
 clients.update = (req, res, next) => {
-  db.one('UPDATE clients SET name=$1, email=$2, phone=$3, location=$4 WHERE id=$5 RETURNING *;',
-  [req.body.name, req.body.email, req.body.phone, req.body.location, req.params.id])
+  db.one('UPDATE clients SET name=$1, email=$2, phone=$3, WHERE id=$5 RETURNING *;',
+  [req.body.name, req.body.email, req.body.phone, req.params.id])
     .then((data) => {
       res.locals.client = data;
       next();
